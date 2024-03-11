@@ -10,16 +10,12 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class CustomUserDetails implements UserDetails {
-    private String firstName;
-    private String lastName;
     private String username;
     private String password;
     private Collection<? extends GrantedAuthority> grantedAuthorities;
 
     public static CustomUserDetails fromUser(UserDTO userDTO){
         CustomUserDetails c = new CustomUserDetails();
-        c.firstName = userDTO.getFirstName();
-        c.lastName = userDTO.getLastName();
         c.username = userDTO.getUsername();
         c.password = userDTO.getPassword();
         c.grantedAuthorities = Collections.singletonList(new SimpleGrantedAuthority(Roles.USER));

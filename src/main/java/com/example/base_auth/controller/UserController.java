@@ -70,6 +70,7 @@ public class UserController {
         return ResponseEntity.ok(new AuthResponse(token));
     }
 
+    //test method to check an auth working
     @GetMapping("/user/get")
     public int getSpecialCode(){
         return 200;
